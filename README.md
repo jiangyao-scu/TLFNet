@@ -58,10 +58,10 @@ python test.py
 # Citation
 Please cite our paper if you find the work useful: 
 
-  @ARTICLE{Jiang2024TLFNet,
-  author={Jiang, Yao and Li, Xin and Fu, Keren and Zhao, Qijun},
-  journal={IEEE Transactions on Image Processing}, 
-  title={Transformer-Based Light Field Salient Object Detection and Its Application to Autofocus}, 
-  year={2024},
-  volume={33},
-  pages={6647-6659}}
+        @article{Jiang2024TLFNet,
+        author={Jiang, Yao and Li, Xin and Fu, Keren and Zhao, Qijun},
+        journal={IEEE Transactions on Image Processing}, 
+        title={Transformer-Based Light Field Salient Object Detection and Its Application to Autofocus}, 
+        year={2024},
+        volume={33},
+        pages={6647-6659}}
