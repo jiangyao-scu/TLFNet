@@ -48,11 +48,13 @@ python -m torch.distributed.launch --nproc_per_node=2 train.py
 ```
 
 ## Testing TLFNet
-* Download the already-trained [weigh]().
-* Start to test with
+* We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-wsin]() and [TLFNet-pvt]().
+* We also have released the trained weight of TLFNet. You can download them ([TLFNet-wsin]() and [TLFNet-pvt]()) and generated saliency maps of TLFNet with:
 ```sh
 python test.py  
 ```
+
+
 # Light Field Salient Object Autofocus
 We are building an online service for "Light Field Salient Object Autofocus". Please stay tuned for our upcoming release.
 
