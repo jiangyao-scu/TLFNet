@@ -1,9 +1,19 @@
 # Transformer-based Light Field Salient Object Detection and Its Application to Autofocus
 
-This is the source code of our "Transformer-based Light Field Salient Object Detection and Its Application to Autofocus" ([paper](https://ieeexplore.ieee.org/abstract/document/10759590)|[project](https://github.com/jiangyao-scu/TLFNet)).
+This is the source code of our "Transformer-based Light Field Salient Object Detection and Its Application to Autofocus".
 
+## Contents:
 
-# Usage
+1. [Transformer-based Light Field Salient Object Detection](#transformer-based-light-field-salient-object-detection)<br>
+  i. [Requirements](#requirements)<br>
+  ii. [Data](#data)<br>
+  iii. [Training TLFNet](#training-tlfnet)<br>
+  iv. [Training TLFNet](#testing-tlfnet)<br>
+2. [Light Field Salient Object Autofocus](#light-field-salient-object-autofocus)<br>
+3. [Citation](#citation)<br>
+
+# Transformer-based Light Field Salient Object Detection
+
 ## Requirements
 * Python 3.7 <br>
 * Torch 1.10.0 <br>
@@ -31,19 +41,19 @@ data
 │   └── ...
 ```
 
-## To Train
+## Training TLFNet
 * Start to train with
 ```sh
 python -m torch.distributed.launch --nproc_per_node=2 train.py 
 ```
 
-## To Test
+## Testing TLFNet
 * Download the already-trained [weigh]().
 * Start to test with
 ```sh
 python test.py  
 ```
-
+# Light Field Salient Object Autofocus
 
 # Citation
 Please cite our paper if you find the work useful: 
