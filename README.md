@@ -54,6 +54,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train.py
 python test.py  
 ```
 # Light Field Salient Object Autofocus
+We are building an online service for "Light Field Salient Object Autofocus". Please stay tuned for our upcoming release.
 
 # Citation
 Please cite our paper if you find the work useful: 
