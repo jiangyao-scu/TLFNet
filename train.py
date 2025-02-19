@@ -173,7 +173,7 @@ def train(args, model, train_dataloader, train_sampler, device, optimizer, local
                 print(os.path.join(args.model_path, 'epoch_{}.pth'.format(epo)))
             with torch.no_grad():
                 model.eval()
-                NEW_MAE = evaluate(args, model, ['DUTLF'], device)
+                NEW_MAE = evaluate(args, model, ['DUTLF-FS'], device)
 
             if NEW_MAE < MAE:
                 torch.save(model.module.state_dict(), os.path.join(args.model_path, 'best.pth'))
@@ -185,25 +185,23 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Parse args for training TLFNet.')
 
     # project settings
-    parser.add_argument('--model_path', default='models/TLFNet_PVT4')
-    parser.add_argument('--log_path', default='log/TLFNet_PVT4')
+    parser.add_argument('--model_path', default='models/TLFNet')
+    parser.add_argument('--log_path', default='log/TLFNet')
     parser.add_argument("--cuda", default="0,1")
     parser.add_argument("--local_rank", default=0)
 
     # data settings
-    parser.add_argument("--train_data_location", type=str,
-                        default='/home/brl/work/dataset/dataset/LFSOD/train_data/DUTLF/TrainingSetCross/')
-    parser.add_argument("--eval_data_location", type=str,
-                        default='/home/brl/work/dataset/dataset/LFSOD/test_data/')
-    parser.add_argument("--eval_dataset", default=['DUTLF'])
-    parser.add_argument("--image_size", type=int, default=256)
+    parser.add_argument("--train_data_location", type=str, default='xxx/data/train/DUTLF-FS/')
+    parser.add_argument("--eval_data_location", type=str, default='xxx/data/test/')
+    parser.add_argument("--eval_dataset", default=['DUTLF-FS'])
+    parser.add_argument("--image_size", type=int, default=224)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--num_worker", type=int, default=2)
     parser.add_argument("--epochs", type=int, default=100)
 
     # model settings
-    parser.add_argument('--backbone', default='pvt')
-    parser.add_argument('--pretrained_model', default='./pretrained_wight/pvt_v2_b2.pth')
+    parser.add_argument('--backbone', default='swin')
+    parser.add_argument('--pretrained_model', default='xxx/swin_tiny_pathc4_window7_224.pth')
 
     # optimizer settings
     parser.add_argument('--lr', type=float, default=5e-5)
@@ -241,11 +239,3 @@ if __name__ == '__main__':
     optimizer = torch.optim.AdamW(TLFNet.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 
     train(args, TLFNet, train_dataloader, train_sampler, device, optimizer, local_rank=local_rank, writer=writer)
-
-    # python - m
-    # torch.distributed.launch - -nproc_per_node = 2
-    # train.py - -model_path
-    # models_test / TLFNet - -log_path
-    # log_test / TLFNet - -backbone
-    # swin - -pretrained_model. / pretrained_wight / swin_tiny_patch4_window7_224.pth - -image_size
-    # 224
