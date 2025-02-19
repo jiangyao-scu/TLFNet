@@ -8,7 +8,7 @@ This is the source code of our "Transformer-based Light Field Salient Object Det
   i. [Requirements](#requirements)<br>
   ii. [Data](#data)<br>
   iii. [Training TLFNet](#training-tlfnet)<br>
-  iv. [Training TLFNet](#testing-tlfnet)<br>
+  iv. [Testing TLFNet](#testing-tlfnet)<br>
 2. [Light Field Salient Object Autofocus](#light-field-salient-object-autofocus)<br>
 3. [Citation](#citation)<br>
 
@@ -60,11 +60,11 @@ python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path
 * We have also released the trained weights of TLFNet. You can download them from the following links: [TLFNet-wsin]() and [TLFNet-pvt]().
 * To generate saliency maps, you will need to modify the "eval_data_location" in the "test.py" according to your data's path. Then, you can generate the saliency maps with:
 ```sh
-python test.py --save_path path/to/save/saliency maps/ --backbone swin --model_path path/of/pre-trained/TLFNet.pth/ --image_size 224
+python test.py --save_path path/to/save/saliency-maps/ --backbone swin --model_path path/of/pre-trained/TLFNet.pth/ --image_size 224
 ```
 or 
 ```sh
-python test.py --save_path path/to/save/saliency maps/ --backbone pvt --model_path path/of/pre-trained/TLFNet_PVT.pth/ --image_size 256
+python test.py --save_path path/to/save/saliency-maps/ --backbone pvt --model_path path/of/pre-trained/TLFNet_PVT.pth/ --image_size 256
 ```
 *It should be noted that, owing to an equipment malfunction, the original PVT-based TLFNet data was unfortunately lost. We subsequently retrained this model and obtained results that closely resemble the initial outcomes. This newly obtained experimental result does not alter the conclusions drawn in this paper.*<br>
 
