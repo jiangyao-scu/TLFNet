@@ -19,10 +19,11 @@ This is the source code of our "Transformer-based Light Field Salient Object Det
 * Torch 1.10.0 <br>
 * Torchvision 0.11.0 <br>
 * Cuda 11.8 <br>
-* Tensorboard 2.11.2
+* Tensorboard 2.11.2 <br>
+* visdom 0.1.8.9
 
 ## Data
-* Download the [dataset](https://github.com/kerenfu/LFSOD-Survey). We organize all the data as follows:
+* Download the [dataset](https://github.com/kerenfu/LFSOD-Survey), and organize all the data as follows:
 ```
 data
 ├── train
@@ -41,17 +42,28 @@ data
 │   └── ...
 ```
 
+
 ## Training TLFNet
-* Start to train with
+* Modify the "train_data_location" and "eval_data_location" in "train.py" according to the path of the data.
+* Start to train swin Transformer based TLFNet with
 ```sh
-python -m torch.distributed.launch --nproc_per_node=2 train.py 
+python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone swin --pretrained_model path/of/pre-trained/swin Transformer/ --image_size 224
+```
+, or train PVT-based TLFNet with
+```sh
+python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone pvt --pretrained_model path/of/pre-trained/PVT/ --image_size 256
 ```
 
 ## Testing TLFNet
-* We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-wsin]() and [TLFNet-pvt]().
-* We also have released the trained weight of TLFNet. You can download them ([TLFNet-wsin]() and [TLFNet-pvt]()) and generated saliency maps of TLFNet with:
+* We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-swin]() and [TLFNet-pvt]().
+* We also have released the trained weight of TLFNet. You can download them ([TLFNet-wsin]() and [TLFNet-pvt]()) to generate saliency maps.
+* To achieve this, you need modify the "eval_data_location" in "test.py" according to the path of the data, and generate saliency maps of TLFNet with:
 ```sh
-python test.py  
+python test.py --save_path path/to/save/saliency maps/ --backbone swin --model_path path/of/pre-trained/TLFNet.pth/ --image_size 224
+```
+or 
+```sh
+python test.py --save_path path/to/save/saliency maps/ --backbone pvt --model_path path/of/pre-trained/TLFNet_PVT.pth/ --image_size 256
 ```
 
 
