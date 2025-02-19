@@ -236,6 +236,6 @@ if __name__ == '__main__':
     TLFNet = torch.nn.parallel.DistributedDataParallel(TLFNet, device_ids=[local_rank],
                                                        output_device=local_rank, find_unused_parameters=True)
 
-    optimizer = torch.optim.AdamW(TLFNet.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    optimizer = torch.optim.Adam(TLFNet.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 
     train(args, TLFNet, train_dataloader, train_sampler, device, optimizer, local_rank=local_rank, writer=writer)
