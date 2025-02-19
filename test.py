@@ -74,7 +74,3 @@ if __name__ == '__main__':
         test_dataloader = DataLoader(data, batch_size=1, shuffle=False)
 
         test(model, test_dataloader, save_sal, device)
-
-    # torch.cuda.empty_cache()
-    # my_evalutor(save_dir='./', gt_dir='/home/brl/work/dataset/dataset/LFSOD/gt',
-    #             pred_dir='./results_test/', cuda=True)
