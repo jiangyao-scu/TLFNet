@@ -45,19 +45,20 @@ data
 
 ## Training TLFNet
 * Modify the "train_data_location" and "eval_data_location" in "train.py" according to the path of the data.
-* Start to train swin Transformer based TLFNet with
+* Download the pre-trained [swin Transformer]() or [PVT]().
+* Start to train Swin Transformer-based TLFNet with
 ```sh
-python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone swin --pretrained_model path/of/pre-trained/swin Transformer/ --image_size 224
+python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone swin --pretrained_model path/of/pre-trained/swin-Transformer/ --image_size 224
 ```
-, or train PVT-based TLFNet with
+or train PVT-based TLFNet with
 ```sh
 python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone pvt --pretrained_model path/of/pre-trained/PVT/ --image_size 256
 ```
 
 ## Testing TLFNet
 * We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-swin]() and [TLFNet-pvt]().
-* We also have released the trained weight of TLFNet. You can download them ([TLFNet-wsin]() and [TLFNet-pvt]()) to generate saliency maps.
-* To achieve this, you need modify the "eval_data_location" in "test.py" according to the path of the data, and generate saliency maps of TLFNet with:
+* We have also released the trained weights of TLFNet. You can download them from the following links: [TLFNet-wsin]() and [TLFNet-pvt]().
+* To generate saliency maps, you will need to modify the "eval_data_location" in the "test.py" according to your data's path. Then, you can generate the saliency maps with:
 ```sh
 python test.py --save_path path/to/save/saliency maps/ --backbone swin --model_path path/of/pre-trained/TLFNet.pth/ --image_size 224
 ```
@@ -65,7 +66,7 @@ or
 ```sh
 python test.py --save_path path/to/save/saliency maps/ --backbone pvt --model_path path/of/pre-trained/TLFNet_PVT.pth/ --image_size 256
 ```
-
+*It should be noted that, owing to an equipment malfunction, the original PVT-based TLFNet data was unfortunately lost. We subsequently retrained this model and obtained results that closely resemble the initial outcomes. This newly obtained experimental result does not alter the conclusions drawn in this paper.*<br>
 
 # Light Field Salient Object Autofocus
 We are building an online service for "Light Field Salient Object Autofocus". Please stay tuned for our upcoming release.
