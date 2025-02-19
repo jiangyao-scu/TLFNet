@@ -37,17 +37,16 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Parse args for testing TLFNet.')
 
     # project settings
-    parser.add_argument('--backbone', default='pvt')
-    parser.add_argument('--model_path', default='/home/brl/media/work/python/TLFNet_github/TLFNet_PVT.pth')
-    parser.add_argument('--save_path', default='./results_test_renamed/TLFNet_pvt4/')
+    parser.add_argument('--backbone', default='swin')
+    parser.add_argument('--model_path', default='xxx/TLFNet.pth')
+    parser.add_argument('--save_path', default='./results/TLFNet/')
     parser.add_argument("--cuda", default="0")
     parser.add_argument("--local_rank", default=0)
 
     # data settings
-    parser.add_argument("--eval_data_location", type=str,
-                        default='/home/brl/work/dataset/dataset/LFSOD/test_data/')
-    parser.add_argument("--eval_dataset", default=['DUTLF', 'LFSD_93','LFSD', 'HFUT_155', 'Lytro'])
-    parser.add_argument("--image_size", type=int, default=256)
+    parser.add_argument("--eval_data_location", type=str, default='xxx/data/test/')
+    parser.add_argument("--eval_dataset", default=['DUTLF','LFSD', 'HFUT_155', 'Lytro'])
+    parser.add_argument("--image_size", type=int, default=224)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--num_worker", type=int, default=2)
 
@@ -79,8 +78,3 @@ if __name__ == '__main__':
     # torch.cuda.empty_cache()
     # my_evalutor(save_dir='./', gt_dir='/home/brl/work/dataset/dataset/LFSOD/gt',
     #             pred_dir='./results_test/', cuda=True)
-
-    # python
-    # test.py - -save_path. / results_test / TLFNet / --backbone
-    # swin - -model_path / home / brl / media / work / python / TLFNet_github / TLFNet.pth - -image_size
-    # 224
