@@ -45,7 +45,7 @@ def parse_args():
 
     # data settings
     parser.add_argument("--eval_data_location", type=str, default='xxx/data/test/')
-    parser.add_argument("--eval_dataset", default=['DUTLF','LFSD', 'HFUT_155', 'Lytro'])
+    parser.add_argument("--eval_dataset", default=['DUTLF-FS','LFSD', 'HFUT-Lytro', 'Lytro Illum'])
     parser.add_argument("--image_size", type=int, default=224)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--num_worker", type=int, default=2)
