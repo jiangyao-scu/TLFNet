@@ -45,7 +45,7 @@ data
 
 ## Training TLFNet
 * Modify the "train_data_location" and "eval_data_location" in "train.py" according to the path of the data.
-* Download the pre-trained [swin Transformer](https://drive.google.com/file/d/1-T0G3esLOQb4c_vkzl40VgXof2OSSCJZ/view?usp=drive_link) or [PVT](https://drive.google.com/file/d/1be31x92t0jKcx2eonpkTLjMD5opLQAl2/view?usp=drive_link).
+* Download the pre-trained [swin Transformer](https://drive.google.com/file/d/1-T0G3esLOQb4c_vkzl40VgXof2OSSCJZ/view?usp=sharing) or [PVT](https://drive.google.com/file/d/1be31x92t0jKcx2eonpkTLjMD5opLQAl2/view?usp=sharing).
 * Start to train Swin Transformer-based TLFNet with
 ```sh
 python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path/to/save/trained/model/ --log_path path/to/save/log/ --backbone swin --pretrained_model path/of/pre-trained/swin-Transformer/ --image_size 224
@@ -56,8 +56,8 @@ python -m torch.distributed.launch --nproc_per_node=2 train.py --model_path path
 ```
 
 ## Testing TLFNet
-* We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-swin](https://drive.google.com/file/d/1-0tb13jeDmygn18QeGgM6jfgtqyuwumZ/view?usp=drive_link) and [TLFNet-pvt](https://drive.google.com/file/d/1ssT-NB9vlPQ0rHJGrwU2N0EaefYX8Bn-/view?usp=drive_link).
-* We have also released the trained weights of TLFNet. You can download them from the following links: [TLFNet-wsin](https://drive.google.com/file/d/19Q67GoRr6N93jOvoq29o6Hqwb1yEPzga/view?usp=drive_link) and [TLFNet-pvt](https://drive.google.com/file/d/1MUG1H0W6e7uij6VPht2nmWU2-VypYf2G/view?usp=drive_link).
+* We have released pre-computed saliency maps of TLFNet based on the Swin Transformer and PVT. Please retrieve the results from the following links: [TLFNet-swin](https://drive.google.com/file/d/1-0tb13jeDmygn18QeGgM6jfgtqyuwumZ/view?usp=sharing) and [TLFNet-pvt](https://drive.google.com/file/d/1ssT-NB9vlPQ0rHJGrwU2N0EaefYX8Bn-/view?usp=sharing).
+* We have also released the trained weights of TLFNet. You can download them from the following links: [TLFNet-wsin](https://drive.google.com/file/d/19Q67GoRr6N93jOvoq29o6Hqwb1yEPzga/view?usp=sharing) and [TLFNet-pvt](https://drive.google.com/file/d/1MUG1H0W6e7uij6VPht2nmWU2-VypYf2G/view?usp=sharing).
 * To generate saliency maps, you will need to modify the "eval_data_location" in the "test.py" according to your data's path. Then, you can generate the saliency maps with:
 ```sh
 python test.py --save_path path/to/save/saliency-maps/ --backbone swin --model_path path/of/pre-trained/TLFNet.pth/ --image_size 224
