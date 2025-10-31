@@ -9,7 +9,7 @@ This is the source code of our "Transformer-based Light Field Salient Object Det
   ii. [Data](#data)<br>
   iii. [Training TLFNet](#training-tlfnet)<br>
   iv. [Testing TLFNet](#testing-tlfnet)<br>
-2. [Light Field Salient Object Autofocus](#light-field-salient-object-autofocus)<br>
+2. [Light Field Salient Object Autofocus](#lfsoa)<br>
 3. [Citation](#citation)<br>
 
 # Transformer-based Light Field Salient Object Detection
@@ -68,8 +68,24 @@ python test.py --save_path path/to/save/saliency-maps/ --backbone pvt --model_pa
 ```
 *It should be noted that, owing to an equipment malfunction, the original PVT-based TLFNet data was unfortunately lost. We subsequently retrained this model and obtained results that closely resemble the initial outcomes. This newly obtained experimental result does not alter the conclusions drawn in this paper.*<br>
 
-# Light Field Salient Object Autofocus
-We are building an online service for "Light Field Salient Object Autofocus". Please stay tuned for our upcoming release.
+<a id="lfsoa"></a>
+# 🎯 Light Field Salient Object Autofocus (LFSOA)
+
+LFSOA is an **automatic focusing technique**. It can automatically select the focal slice from a light field focal stack where the salient object is in focus, achieving a natural background blur, or "Bokeh" effect.
+
+## 🌟 Core Concept
+
+Traditional image blurring methods often rely on post-processing techniques like Gaussian blur, resulting in unrealistic effects. They are also prone to erroneously blurring parts of the main subject due to inaccurate saliency detection. LFSOA leverages the inherent advantages of light field data by combining salient object detection with an autofocus technique to achieve a **true, optical-level depth-of-field effect**.
+
+## 📸 Demo Showcase
+
+This project provides two LFSOA demonstrations:
+
+-   **Demo 1**: Single-object scene autofocus
+-   **Demo 2**: Multi-object interactive focus selection
+
+Each demo showcases the processing results of LFSOA, including the saliency map, the ROI selection process, and the final output bokeh image.
+
 
 # Citation
 Please cite our paper if you find the work useful: 
