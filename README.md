@@ -81,8 +81,7 @@ Traditional image blurring methods often rely on post-processing techniques like
 
 This project provides two LFSOA demonstrations:
 
--   **Demo 1**: Single-object scene autofocus
--   **Demo 2**: Multi-object interactive focus selection
+![1](figures/S1.gif) ![2](figures/S2.gif)
 
 Each demo showcases the processing results of LFSOA, including the saliency map, the ROI selection process, and the final output bokeh image.
 
