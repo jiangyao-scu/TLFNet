@@ -82,8 +82,8 @@ Traditional image blurring methods often rely on post-processing techniques like
 This project provides two LFSOA demonstrations:
 
 <div style="display: flex; justify-content: center; gap: 40px;">
-  <img src="figures/S1.gif" alt="Demo 1" style="max-width: 20%;">
-  <img src="figures/S2.gif" alt="Demo 2" style="max-width: 20%;">
+  <img src="figures/S1.gif" alt="Demo 1" style="width: 400px;">
+  <img src="figures/S2.gif" alt="Demo 2" style="width: 400px;">
 </div>
 
 Each demo showcases the processing results of LFSOA, including the saliency map, the ROI selection process, and the final output bokeh image.
