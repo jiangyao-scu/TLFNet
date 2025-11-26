@@ -1,6 +1,18 @@
+
 # Transformer-based Light Field Salient Object Detection and Its Application to Autofocus
 
 This is the source code of our "Transformer-based Light Field Salient Object Detection and Its Application to Autofocus".
+
+## 📸 Demo Showcase of Light Field Salient Object Autofocus (LFSOA)
+
+This project provides two LFSOA demonstrations:
+
+<div style="display: flex; justify-content: center; gap: 40px;">
+  <img src="figures/S1.gif" alt="Demo 1" style="width: 400px;">
+  <img src="figures/S2.gif" alt="Demo 2" style="width: 400px;">
+</div>
+
+Each demo showcases the processing results of LFSOA, including the saliency map, the ROI selection process, and the final output bokeh image.
 
 ## Contents:
 
@@ -77,16 +89,6 @@ LFSOA is an **automatic focusing technique**. It can automatically select the fo
 
 Traditional image blurring methods often rely on post-processing techniques like Gaussian blur, resulting in unrealistic effects. They are also prone to erroneously blurring parts of the main subject due to inaccurate saliency detection. LFSOA leverages the inherent advantages of light field data by combining salient object detection with an autofocus technique to achieve a **true, optical-level depth-of-field effect**.
 
-## 📸 Demo Showcase
-
-This project provides two LFSOA demonstrations:
-
-<div style="display: flex; justify-content: center; gap: 40px;">
-  <img src="figures/S1.gif" alt="Demo 1" style="width: 400px;">
-  <img src="figures/S2.gif" alt="Demo 2" style="width: 400px;">
-</div>
-
-Each demo showcases the processing results of LFSOA, including the saliency map, the ROI selection process, and the final output bokeh image.
 
 
 # Citation
