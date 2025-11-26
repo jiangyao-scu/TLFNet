@@ -23,7 +23,7 @@ This is the source code of our "Transformer-based Light Field Salient Object Det
 * visdom 0.1.8.9
 
 ## Data
-* Download the [dataset](https://github.com/kerenfu/LFSOD-Survey), and organize all the data as follows:
+* Download the [dataset](https://github.com/kerenfu/LFSOD-Survey) (the datasets we used in our paper can also be downloaded from [Google Drive](https://drive.google.com/drive/folders/1yg1f-zqFLV146C7mEt5H3cvPq1uoB8Qi?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1qwjXFUWfv_-jzm9Vx38JOQ?pwd=s4ty)), and organize all the data as follows:
 ```
 data
 ├── train
